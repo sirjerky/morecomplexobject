@@ -2,6 +2,7 @@
 
 module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-mocha')
 
   grunt.initConfig({
     jshint: {
@@ -11,9 +12,18 @@ module.exports = function(grunt){
       options: {
         jshintrc: true
       }
+    },
+    mocha: {
+      test: {
+        options: {
+          reporter: "Nyan",
+          run: true
+        },
+        src: 'test/**/*.html'
+      }
     }
   });
 
-  grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('default', ['jshint', 'mocha']);
 
 };

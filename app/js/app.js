@@ -4,7 +4,7 @@ var Counter = require('./complex_object');
 
 var test = new Counter();
 
-test.getValue();
+console.log(test.getValue());
 test.increment();
 test.increment();
-test.getValue();
+console.log(test.getValue());
